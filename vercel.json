@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd uploader && npm run build",
+  "outputDirectory": "uploader/.next",
+  "installCommand": "cd uploader && npm install",
+  "devCommand": "cd uploader && npm run dev"
+}

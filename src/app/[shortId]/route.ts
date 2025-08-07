@@ -12,10 +12,10 @@ const s3Client = new S3Client({
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { shortId: string } }
+  { params }: { params: Promise<{ shortId: string }> }
 ) {
   try {
-    const { shortId } = params
+    const { shortId } = await params
 
     const command = new ListObjectsV2Command({
       Bucket: process.env.R2_BUCKET_NAME!,
@@ -30,7 +30,6 @@ export async function GET(
     }
 
     const fileKey = response.Contents[0].Key!
-    const fileName = fileKey.split('/').pop()
     
     const r2PublicUrl = `${process.env.R2_PUBLIC_URL}/${fileKey}`
     

@@ -16,7 +16,6 @@ export default function Home() {
     history, 
     isLoading: historyLoading, 
     addToHistory, 
-    clearHistory, 
     deleteFileAndRemoveFromHistory 
   } = useUploadHistory()
 

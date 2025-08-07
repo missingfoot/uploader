@@ -67,7 +67,7 @@ export default function UploadHistory({
       if (!result.success) {
         setError(result.error || 'Failed to delete file')
       }
-    } catch (err) {
+    } catch {
       setError('Failed to delete file')
     } finally {
       setDeletingId(null)

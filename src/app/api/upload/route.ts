@@ -27,7 +27,6 @@ export async function POST(request: NextRequest) {
     }
 
     const shortId = nanoid(6)
-    const fileExtension = file.name.split('.').pop()
     const fileName = `${file.name}`
     const key = `${shortId}/${fileName}`
 
